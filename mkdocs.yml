@@ -2,6 +2,7 @@ site_name: YOLOvX
 site_url: https://yolovx.com
 theme:
   name: material
+  logo: yolovx_logo.png
   features:
     - navigation.tabs
     - navigation.sections
@@ -38,7 +39,7 @@ extra:
     # - icon: fontawesome/brands/twitter
     #   link: 
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/yolovx/
+      link: https://www.linkedin.com/company/yolovx/
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -58,4 +59,4 @@ markdown_extensions:
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
 copyright: |
-  &copy; 2024 <a href="https://github.com/yolovx"  target="_blank" rel="noopener">YOLOvX All rights reserved.</a>
+  &copy; 2024 <a href="https://yolovx.com"  target="_blank" rel="noopener">YOLOvX All rights reserved.</a>
