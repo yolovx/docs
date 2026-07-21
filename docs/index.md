@@ -12,7 +12,7 @@ pip install yolovx-sdk
 
 ## Usage
 
-First, set your API key as an environment variable:
+First, set your API key as an environment variable 2:
 
 ```python
 import os
