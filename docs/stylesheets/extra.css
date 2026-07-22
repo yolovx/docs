@@ -1,0 +1,56 @@
+/* --- Modern Custom Styling for YOLOvX WebApp --- */
+
+/* Smooth UI Corners & Borders */
+:root {
+  --md-primary-fallback-color: #3f51b5;
+  --md-code-font: 'JetBrains Mono', monospace;
+  --md-text-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Glassmorphism / Modern Subtle Header */
+.md-header {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(8px);
+}
+
+/* Card-like Styling for Documentation Images */
+.md-content img {
+  border-radius: 10px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.md-content img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.12);
+}
+
+/* Sleek Code Blocks */
+.md-typeset pre > code {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Clean Modern Callout / Admonition Boxes */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border-width: 1px;
+}
+
+/* Modern Pill-Style Tabs */
+.md-typeset .tabbed-set > label {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Table Design Polish */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}

@@ -1,62 +1,86 @@
-site_name: YOLOvX
+site_name: YOLOvX WebApp
 site_url: https://yolovx.com
+
+extra_css:
+  - stylesheets/extra.css
+
 theme:
   name: material
   logo: yolovx_logo.png
+  language: en
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    # Light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
-    - navigation.tabs
-    - navigation.sections
-    - toc.integrate
-    - navigation.top
+    - navigation.tabs          # Top-level navigation bar
+    - navigation.tabs.sticky   # Pins top bar on scroll
+    - navigation.sections      # Sub-grouping in sidebar
+    - navigation.prune         # Hides left sidebar when a section has only 1 page
+    - navigation.top           # Back to top button
+    - navigation.instant       # SPA page loading without reloads
+    - navigation.instant.progress
+    - navigation.tracking
     - search.suggest
     - search.highlight
-    - content.tabs.link
-    - content.code.annotation
     - content.code.copy
-  language: en
-  palette:
-    - scheme: default
-      toggle:
-        icon: material/toggle-switch-off-outline 
-        name: Switch to dark mode
-      primary: teal
-      accent: purple 
-    - scheme: slate 
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode    
-      primary: teal
-      accent: lime
-
-# plugins:
-#   - social
-#   - search
+    - content.code.annotate
 
 extra:
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/yolovx
-    # - icon: fontawesome/brands/twitter
-    #   link: 
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/yolovx/
 
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - admonition
-  - pymdownx.arithmatex:
-      generic: true
-  - footnotes
-  - pymdownx.details
   - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.mark
+  - pymdownx.keys
   - attr_list
+  - md_in_html
+  - footnotes
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
 copyright: |
-  &copy; 2024 <a href="https://yolovx.com"  target="_blank" rel="noopener">YOLOvX All rights reserved.</a>
+  &copy; 2026 <a href="https://yolovx.com" target="_blank" rel="noopener">YOLOvX All rights reserved.</a>
+
+nav:
+  - Home: index.md
+  - SDK: sdk.md
+  - Models: 
+      - Overview: models.md
+      - Private Model Details: private_model_detail.md
+      - Shared Model Details: shared_model_detail.md
+  - Annotations:
+      - Overview: annotations.md
+      - Project List: projectlist.md
+      - Job Batch: JobBatch.md
+      - Auto Annotation: Auto_annotation.md
+  - Account Management: account_management.md

@@ -1,80 +1,123 @@
-# 
+# YOLOvX Web Application
 
-This SDK provides a convenient interface for deploying and managing YOLOvX models. It includes methods for listing available models and deploying new models.
+Welcome to the documentation for the YOLOvX Web App.
 
-## Installation
+This application provides real-time object detection using deep learning models in a web interface.
 
-To use this SDK, first ensure you have Python installed on your system. Then, you can install it via pip:
+## Key Features
 
-```bash
-pip install yolovx-sdk
-```
+* Real-time object detection
+* Fast and accurate results
+* User-friendly web interface
+* Supports image and video input
 
-## Usage
+---
 
-First, set your API key as an environment variable:
+## Authentication Workflow
 
-```python
-import os
+Below is the complete user authentication and access flow of the application.
 
-os.environ["API_KEY"] = "your_api_key_here"
-```
 
-Next, import the `YOLOvX_sdk` class from the SDK:
+###  Creates an Account
 
-```python
-from sdk.YOLOvX import YOLOvX_sdk
-```
+You can register by filling out the registration form with your email ID and password. Click on **Create Account**, and a verification code will be sent to your registered email address.
 
-Create an instance of the `YOLOvX_sdk` class:
+![Create Account](images/CreateAcc.png)
 
-```python
-vx = YOLOvX_sdk()
-```
+---
 
-### Listing Models Names
+###  Verify Account 
 
-You can list used model names using the `list_model_names` method:
+After creating an account, a verification code is sent to your registered email. Enter this code in the verification field and click the **Verify Passcode** button.
 
-```python
-vx.list_model_names()
-```
+![Email Verification Code](images/Verify.png)
 
-### Deploying a Model
+---
 
-To deploy a new model, use the `deploy_model` method:
+Once the verification code is successfully validated, you will be redirected to the sign-in page.
 
-```python
-vx.deploy_model("model_name", "/path/to/your/model")
-```
+![Redirect to Sign In](images/signin.png)
 
-Replace `"model_name"` with the desired name for your model and `"/path/to/your/model"` with the path to your YOLOvX model file.
+---
 
-### Supported Models are in YOLOvX App
+###  Resend Passcode
 
-| Format           | Supported  |
-|------------------|------------|
-| YOLOv9           | ✅        |
-| YOLOv8           | ✅        |                               
-| YOLOv5           | ✅        |
-| YOLOv3           | ✅        |                         
+If you enter an incorrect code, you can click **Resend Passcode** to receive a new one. Then enter the new passcode to verify your email address.
 
-## Example
+![Resend Passcode](images/ResendPasscode.png)
 
-```python
-import os
-from sdk.YOLOvX import YOLOvX_sdk
+---
 
-# Set your API key
-os.environ["API_KEY"] = "your_api_key_here"
+###  Signs In
 
-# Create an instance of YOLOvX_sdk
-vx = YOLOvX_sdk()
+You can sign in using the credentials created during registration.
 
-# List available models
-vx.list_model_names()
+![Sign In](images/signin.png)
 
-# Deploy a new model
-vx.deploy_model("model_name", "/path/to/your.pt")
-```
+---
+
+###  Forgot Password 
+
+If you forget your password, click **Forgot Password**, enter your email address, and a password reset link will be sent to your email. 
+
+![Forgot Password](images/ForgotPassword.png)
+
+---
+
+Click the link to open the reset form, enter your new password, and submit. Your password will be successfully updated, and you will be redirected to the Sign-In page to log in.
+
+![Reset Link](images/ResetLink.png)
+
+---
+
+## Profile Completion (On First Login)
+
+After a successful login, the system checks whether the user’s profile information is complete.
+
+If the profile is **incomplete**, a modal popup appears prompting the user to update their profile before continuing.
+
+
+### When This Appears
+- Triggered immediately after login
+- Displayed only if required profile details are missing
+- Blocks interaction with the dashboard until the user **saves** or **skips**
+
+## Profile Completion (On First Login)
+
+After login, the system checks if the user profile is complete.  
+If required details are missing, a **“Complete YOLOvX Profile”** modal is shown before accessing the dashboard.
+
+The modal allows users to enter:
+- **Display Name**
+- **Company / Organization** (optional)
+- **Job Function**
+
+Users can **Save** to update their profile or **Skip** to continue.  
+Once completed, this popup will not appear again on future logins unless the profile becomes incomplete.
+![Profile](images/profile.png)
+
+
+## Dashboard (Models Page)
+
+Once you log in successfully, you will be redirected to the **dashboard**, starting with the **Models** page.
+
+![Models Dashboard](images/ModelPage.png)
+
+---
+
+## Sidebar Navigation
+
+After logging in, a sidebar appears on the left side of the application providing quick access to key modules:
+
+-  **Models**
+-  **Datasets**
+-  **Training**
+-  **Deployments**
+-  **Annotations**
+
+![Models Dashboard](images/ModelPage.png)
+
+
+At the **bottom-left corner** of the sidebar, a **User Icon** is displayed. Clicking this icon opens account-related options such as:
+
 
