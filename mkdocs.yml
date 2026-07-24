@@ -1,5 +1,6 @@
-site_name: YOLOvX WebApp
+site_name: YOLOvX Docs
 site_url: https://yolovx.com
+site_description: YOLOvX — Vision AI SaaS for annotation, training & deployment
 
 extra_css:
   - stylesheets/extra.css
@@ -7,38 +8,66 @@ extra_css:
 theme:
   name: material
   logo: yolovx_logo.png
+  favicon: yolovx_logo.png
   language: en
   font:
     text: Inter
     code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
   palette:
     # Light mode
     - scheme: default
       primary: indigo
       accent: indigo
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-sunny
         name: Switch to dark mode
     # Dark mode
     - scheme: slate
       primary: indigo
       accent: indigo
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-night
         name: Switch to light mode
   features:
-    - navigation.tabs          # Top-level navigation bar
-    - navigation.tabs.sticky   # Pins top bar on scroll
-    - navigation.sections      # Sub-grouping in sidebar
-    - navigation.prune         # Hides left sidebar when a section has only 1 page
-    - navigation.top           # Back to top button
-    - navigation.instant       # SPA page loading without reloads
+    # Navigation
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.prune
+    - navigation.indexes
+    - navigation.top
+    - navigation.instant
     - navigation.instant.progress
     - navigation.tracking
+    - navigation.path
+    - navigation.footer
+    - toc.follow
+
+    # Search
     - search.suggest
     - search.highlight
+    - search.share
+
+    # Content
     - content.code.copy
     - content.code.annotate
+    - content.code.select
+    - content.tabs.link
+    - content.tooltips
+    - content.action.edit
+    - content.action.view
+
+    # Header
+    - header.autohide
+    - announce.dismiss
+
+repo_url: https://github.com/yolovx/docs
+repo_name: yolovx/docs
+edit_uri: edit/main/docs/
 
 extra:
   social:
@@ -47,6 +76,10 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/yolovx/
 
+  generator: false
+  version:
+    provider: mike
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -54,33 +87,49 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - admonition
   - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.mark
   - pymdownx.keys
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.smartsymbols
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - attr_list
   - md_in_html
   - footnotes
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section
+      title: On this page
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
 copyright: |
-  &copy; 2026 <a href="https://yolovx.com" target="_blank" rel="noopener">YOLOvX All rights reserved.</a>
+  &copy; 2026 <a href="https://yolovx.com" target="_blank" rel="noopener">YOLOvX</a>. All rights reserved.
 
 nav:
   - Home: index.md
-  - SDK: sdk.md
-  - Models: 
+  - Models:
       - Overview: models.md
       - Private Model Details: private_model_detail.md
       - Shared Model Details: shared_model_detail.md
   - Annotations:
       - Overview: annotations.md
+      - Mobile Sync: mobile-sync.md
       - Project List: projectlist.md
       - Job Batch: JobBatch.md
       - Auto Annotation: Auto_annotation.md
+  - Datasets: datasets.md
   - Account Management: account_management.md

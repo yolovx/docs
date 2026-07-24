@@ -129,7 +129,7 @@ When you click on a label or shape, the **Edit Label panel** opens.
 - **Save / Cancel** – Apply or discard changes.
 - **In This Image** – Shows labels used in the current image.
 - **Project Labels** – Shows all labels available in the project (e.g., `car`, `person`, `bus`, `traffic light`).
-![Edit Label](images/edit_labels.png)
+![Edit Label](images/edit_lables.png)
 ---
 
 ## Annotation Workflow
