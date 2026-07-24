@@ -1,0 +1,53 @@
+/* ---------- Fix Light Mode Nav Tabs & Text Contrast ---------- */
+
+[data-md-color-scheme="default"] .md-tabs {
+  background-color: #f8fafc; /* Very light slate background */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Force dark text for nav tab links in Light Mode */
+[data-md-color-scheme="default"] .md-tabs__link {
+  color: #334155 !important; /* Dark slate text */
+  opacity: 0.75;
+}
+
+/* Active tab text & hover state in Light Mode */
+[data-md-color-scheme="default"] .md-tabs__link:hover {
+  color: #4f46e5 !important; /* Indigo accent on hover */
+  opacity: 1;
+}
+
+[data-md-color-scheme="default"] .md-tabs__link--active {
+  color: #4f46e5 !important; /* Indigo text for active tab */
+  font-weight: 600;
+  opacity: 1;
+}
+
+
+/* ---------- Dark Mode Nav Tabs ---------- */
+
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: #0f1117;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link {
+  color: #e2e4e9 !important;
+  opacity: 0.75;
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link:hover,
+[data-md-color-scheme="slate"] .md-tabs__link--active {
+  color: #818cf8 !important;
+  opacity: 1;
+}
+
+
+/* ---------- Logo Sizing & Display Fix ---------- */
+
+.md-header__button.md-logo img, 
+.md-header__button.md-logo svg {
+  height: 1.6rem;
+  width: auto;
+  display: block;
+}
