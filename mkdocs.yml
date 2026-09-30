@@ -1,14 +1,14 @@
-site_name: YOLOvX Docs
+site_name: Documentation
 site_url: https://yolovx.com
-site_description: YOLOvX — Vision AI SaaS for annotation, training & deployment
+site_description: "YOLOvX — Vision AI SaaS for annotation, training & deployment"
 
 extra_css:
   - stylesheets/extra.css
 
 theme:
   name: material
-  logo: yolovx_logo.png
-  favicon: yolovx_logo.png
+  logo: ./images/yolovx_logo_e.webp
+  favicon: ./images/yolovx_logo.png
   language: en
   font:
     text: Inter
@@ -36,8 +36,6 @@ theme:
     # Navigation
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.prune
     - navigation.indexes
     - navigation.top
     - navigation.instant
@@ -70,17 +68,24 @@ repo_name: yolovx/docs
 edit_uri: edit/main/docs/
 
 extra:
+  # Disables "Made with Material for MkDocs" in footer
+  generator: false 
+  
+  # GitHub & LinkedIn Social Icons in Footer
   social:
-    - icon: fontawesome/brands/github-alt
+    - icon: fontawesome/brands/github
       link: https://github.com/yolovx
+      name: YOLOvX GitHub
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/yolovx/
-
-  generator: false
-  version:
-    provider: mike
+      name: YOLOvX LinkedIn
 
 markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - footnotes
+  - tables
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -92,7 +97,6 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - admonition
   - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true
@@ -104,10 +108,6 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.tasklist:
       custom_checkbox: true
-  - attr_list
-  - md_in_html
-  - footnotes
-  - tables
   - toc:
       permalink: true
       permalink_title: Anchor link to this section
@@ -116,6 +116,7 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
+# Footer Copyright Line
 copyright: |
   &copy; 2026 <a href="https://yolovx.com" target="_blank" rel="noopener">YOLOvX</a>. All rights reserved.
 
@@ -132,4 +133,6 @@ nav:
       - Job Batch: JobBatch.md
       - Auto Annotation: Auto_annotation.md
   - Datasets: datasets.md
-  - Account Management: account_management.md
+  - Account & Authentication:
+      - Quickstart & Auth: authentication.md
+      - Account Management: account_management.md

@@ -1,49 +1,6 @@
-/* ---------- Fix Light Mode Nav Tabs & Text Contrast ---------- */
-
-[data-md-color-scheme="default"] .md-tabs {
-  background-color: #f8fafc; /* Very light slate background */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-/* Force dark text for nav tab links in Light Mode */
-[data-md-color-scheme="default"] .md-tabs__link {
-  color: #334155 !important; /* Dark slate text */
-  opacity: 0.75;
-}
-
-/* Active tab text & hover state in Light Mode */
-[data-md-color-scheme="default"] .md-tabs__link:hover {
-  color: #4f46e5 !important; /* Indigo accent on hover */
-  opacity: 1;
-}
-
-[data-md-color-scheme="default"] .md-tabs__link--active {
-  color: #4f46e5 !important; /* Indigo text for active tab */
-  font-weight: 600;
-  opacity: 1;
-}
-
-
-/* ---------- Dark Mode Nav Tabs ---------- */
-
-[data-md-color-scheme="slate"] .md-tabs {
-  background-color: #0f1117;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-[data-md-color-scheme="slate"] .md-tabs__link {
-  color: #e2e4e9 !important;
-  opacity: 0.75;
-}
-
-[data-md-color-scheme="slate"] .md-tabs__link:hover,
-[data-md-color-scheme="slate"] .md-tabs__link--active {
-  color: #818cf8 !important;
-  opacity: 1;
-}
-
-
-/* ---------- Logo Sizing & Display Fix ---------- */
+/* ==========================================
+   1. LOGO SIZING & HEADER FIX
+   ========================================== */
 
 .md-header__button.md-logo img, 
 .md-header__button.md-logo svg {
@@ -51,3 +8,97 @@
   width: auto;
   display: block;
 }
+
+/* ==========================================
+   2. ULTRALYTICS / SAAS STYLE GRID CARDS
+   ========================================== */
+
+.grid.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.grid.cards > ul {
+  display: contents;
+}
+
+.grid.cards > ul > li,
+.grid.cards > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--md-card-bg-color, #1e222d);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  list-style: none !important;
+  margin: 0 !important;
+}
+
+/* Light mode card background and border */
+[data-md-color-scheme="default"] .grid.cards > ul > li,
+[data-md-color-scheme="default"] .grid.cards > li {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Hover Effect */
+.grid.cards > ul > li:hover,
+.grid.cards > li:hover {
+  transform: translateY(-3px);
+  border-color: #818cf8;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+[data-md-color-scheme="default"] .grid.cards > ul > li:hover,
+[data-md-color-scheme="default"] .grid.cards > li:hover {
+  border-color: #4f46e5;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.12);
+}
+
+/* Card Header Text */
+.grid.cards strong {
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--md-typeset-color);
+}
+
+/* Card Paragraph Text */
+.grid.cards p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.85;
+  margin-bottom: 1rem !important;
+  flex-grow: 1;
+}
+
+/* Bottom Action Link */
+.grid.cards a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #818cf8 !important;
+  text-decoration: none !important;
+}
+
+[data-md-color-scheme="default"] .grid.cards a {
+  color: #4f46e5 !important;
+}
+
+.grid.cards a:hover {
+  text-decoration: underline !important;
+}
+
+/* Hide horizontal rules inside cards if present */
+.grid.cards hr {
+  display: none;
+}
+

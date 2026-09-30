@@ -18,7 +18,7 @@ Dataset versioning separates **live staging data** (actively being annotated) fr
 
 ## Page Layout
 
-The page is divided into two panels:
+The page is divided into two main sections:
 
 ### Left Panel – Version History
 
@@ -31,12 +31,12 @@ A timeline of all dataset versions for the project:
 
 Each version card shows:
 
-- Version tag (e.g., `v0`, `v1`)
-- Version name
-- Created date (or "Real-time Sync" for v0)
-- Total image count
+- **Version tag** (e.g., `v0`, `v1`, `v2`, `v3`)
+- **Version name**
+- **Created timestamp** (or *"Real-time Sync"* for `v0`)
+- **Total image count**
 
-Click any version to view its details in the right panel.
+Click any version to view its specific metrics in the right panel.
 
 ---
 
@@ -44,42 +44,53 @@ Click any version to view its details in the right panel.
 
 The **v0** version represents your project's current, in-progress dataset:
 
-- **Status:** Dynamic — counts update in real time as images and annotations are added
+- **Status:** Dynamic — counts update in real time as images and annotations are added.
 - **Volume Metrics:**
-  - **Total Images** – All images in the project
-  - **Instances** – Total annotation instances across all images
-  - **Unannotated Images** – Images without any annotations
-- **Pipeline Split:** Unassigned — splits are configured when you freeze a version
-- **Class Distribution:** Live bar chart showing instance counts per label
+  - **Total Images** – All images in the current project pool.
+  - **Instances** – Total annotation instances across all images.
+  - **Unannotated Images** – Images waiting to be annotated.
+- **Pipeline Split:** Displays **Unassigned Pipeline** (splits are defined when freezing a version).
+- **Class Distribution:** Live bar chart showing instance counts per label (*"No instances available yet"* when starting fresh).
 
-### Freeze Version
+<p align="center">
+  <img src="../images/dataset_v0_staging.png" width="750" alt="v0 Live Staging Data View" />
+</p>
 
-When your staging data is ready, click **Freeze Version** to create an immutable snapshot:
+### Freezing a Version
 
-1. A **Configure Pipeline Splits** modal opens.
-2. Set the train/validation/test split percentages (must total **100%**):
+When your staging data is ready, click **Freeze Version** in the top right corner to convert your live data into a frozen snapshot:
+
+1. Click **Freeze Version**.
+2. The **Configure Pipeline Splits** modal opens.
+3. Adjust the train, validation, and test percentages (must total **100%**):
    - **Training Set (%)** – Default: 70%
-   - **Validation (%)** – Default: 20%
-   - **Test Set (%)** – Default: 10%
-3. Click **Confirm & Freeze**.
+   - **Validation (%)** – Default: 20% (or custom, e.g., 18%)
+   - **Test Set (%)** – Default: 10% (or custom, e.g., 12%)
+4. Click **Confirm & Freeze**.
 
-The system creates a new frozen version (e.g., `v1 – Frozen Snapshot v1`) with the configured splits and locks the current annotation state.
+<p align="center">
+  <img src="../images/dataset_freeze_modal.png" width="400" alt="Configure Pipeline Splits Modal" />
+</p>
 
 ---
 
 ## Frozen Versions (v1+)
 
-Frozen versions are read-only snapshots with finalized metrics:
+Frozen versions are read-only, immutable snapshots created from `v0` staging data.
+
+<p align="center">
+  <img src="../images/dataset_frozen_version.png" width="750" alt="Frozen Snapshot View" />
+</p>
 
 ### Volume Metrics
 
-- **Total Images**
-- **Instances** (annotation count)
-- **Unannotated Images**
+- **Total Images** – Finalized count of images locked in this version.
+- **Instances** – Total frozen annotation count.
+- **Unannotated Images** – Remaining unlabelled images at the time of freeze.
 
 ### Pipeline Split
 
-A visual bar showing the train/validation/test distribution set during freeze:
+A visual progress bar displaying the configured distribution:
 
 - **Train** (blue)
 - **Val** (purple)
@@ -87,39 +98,39 @@ A visual bar showing the train/validation/test distribution set during freeze:
 
 ### Class Distribution
 
-A scrollable list of all labels with instance counts and relative bar charts.
+A scrollable breakdown of all label classes with exact instance counts and visual percentage bars.
 
-### Export
+### Exporting Snapshots
 
-Click **Export** on a frozen version to download annotations in your chosen format. See [Export formats](Auto_annotation.md#exporting-annotations) for supported formats.
+Click the **Export** button in the top right of any frozen version card to download annotations for training. See [Export Formats](Auto_annotation.md#exporting-annotations) for supported dataset exports.
 
 ---
 
 ## Role-Based Access
 
-Your role badge is displayed in the page header:
+Your active role badge is displayed in the page header:
 
-| Role | Access |
-|------|--------|
+| Role | Access Permissions |
+|------|--------------------|
 | **Admin** | Full access — freeze versions, export data |
-| **Member** | View version history and metrics |
-| **Annotator** | View version history and metrics |
+| **Member** | View version history and volume metrics |
+| **Annotator** | View version history and volume metrics |
 
-Team management requires a **Pro** subscription. See [Upgrade Plan](account_management.md#upgrade-plan).
+> Team management and role configurations require a **Pro** plan. See [Upgrade Plan](account_management.md#upgrade-plan).
 
 ---
 
 ## Navigation
 
-- **Project Name** (uppercase link in header) – Returns to the [Project Dashboard](JobBatch.md)
-- **Dataset Versions** title – Current page context
+- **PROJECT : [NAME]** (uppercase header link) – Returns to the [Project Dashboard](JobBatch.md).
+- **Dataset Versions** title – Indicates current page context.
 
 ---
 
 ## Workflow Summary
 
-1. Annotate images in job batches within your project.
-2. Monitor live metrics on the **v0 Live Staging Data** version.
-3. When ready, **Freeze Version** with your desired train/val/test splits.
-4. **Export** the frozen snapshot for model training or external use.
-5. Continue annotating — v0 keeps updating while frozen versions remain locked.
+1. **Annotate:** Create job batches and annotate images in your workspace.
+2. **Monitor:** Track real-time progress on **v0 Live Staging Data**.
+3. **Freeze:** Click **Freeze Version** and set your **Train/Val/Test** percentages.
+4. **Export:** Download the frozen snapshot for training or external pipelines.
+5. **Iterate:** Continue annotating — `v0` updates continuously while frozen snapshots remain locked.
