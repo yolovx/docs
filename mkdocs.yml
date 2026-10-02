@@ -122,17 +122,25 @@ copyright: |
 
 nav:
   - Home: index.md
+
   - Models:
       - Overview: models.md
       - Private Model Details: private_model_detail.md
       - Shared Model Details: shared_model_detail.md
+
   - Annotations:
       - Overview: annotations.md
       - Mobile Sync: mobile-sync.md
       - Project List: projectlist.md
       - Job Batch: JobBatch.md
       - Auto Annotation: Auto_annotation.md
-  - Datasets: datasets.md
+
+  - Datasets:
+      - Overview: datasets.md
+
+  - Training:
+      - Training Pipeline: training.md
+
   - Account & Authentication:
       - Quickstart & Auth: authentication.md
       - Account Management: account_management.md
