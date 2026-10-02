@@ -1,31 +1,120 @@
 /* ==========================================
-   1. LOGO SIZING & HEADER FIX
+   1. YOLOVX DOCS SHELL
    ========================================== */
 
-.md-header__button.md-logo img, 
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #087f79;
+  --md-primary-fg-color--dark: #006b65;
+  --md-primary-fg-color--light: #39bdb2;
+  --md-default-bg-color: #f5f7f8;
+  --md-default-fg-color: #1b252d;
+  --md-default-fg-color--light: #586771;
+  --md-default-fg-color--lightest: #d9e1e4;
+  --md-typeset-a-color: #007f78;
+  --md-accent-fg-color: #00a99d;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #159d93;
+  --md-primary-fg-color--dark: #0f7973;
+  --md-primary-fg-color--light: #54d6ca;
+  --md-default-bg-color: #11171b;
+  --md-default-fg-color: #e3eaed;
+  --md-default-fg-color--light: #aab7bd;
+  --md-default-fg-color--lightest: #334149;
+  --md-typeset-a-color: #54d6ca;
+  --md-accent-fg-color: #54d6ca;
+}
+
+.md-header {
+  background: #11171b;
+  border-bottom: 1px solid #29343a;
+  box-shadow: none;
+}
+
+.md-header__title,
+.md-header__button {
+  color: #f1f6f7;
+}
+
+.md-sidebar--primary {
+  background: #11171b;
+  border-right: 1px solid #29343a;
+  color: #d9e2e5;
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap {
+  background: #11171b;
+}
+
+.md-sidebar--primary .md-nav__title {
+  background: #11171b;
+  color: #f1f6f7;
+  font-weight: 700;
+}
+
+.md-sidebar--primary .md-nav__link {
+  margin-block: 2px;
+  padding: 0.45rem 0.65rem;
+  border-radius: 5px;
+  color: #b6c2c7;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.md-sidebar--primary .md-nav__link:hover {
+  background: #1d292e;
+  color: #ffffff;
+}
+
+.md-sidebar--primary .md-nav__link--active {
+  background: #173432;
+  color: #66e1d5;
+  font-weight: 600;
+}
+
+.md-sidebar--primary .md-nav__item--section > .md-nav__link {
+  margin-top: 0.85rem;
+  color: #f1f6f7;
+  font-weight: 700;
+}
+
+.md-sidebar--primary .md-nav__item--section > .md-nav__link::before {
+  display: inline-block;
+  width: 3px;
+  height: 1rem;
+  margin-right: 0.55rem;
+  border-radius: 2px;
+  background: #39cfc2;
+  content: "";
+  vertical-align: -0.15rem;
+}
+
+.md-sidebar--secondary .md-nav__title {
+  color: var(--md-default-fg-color);
+  font-weight: 700;
+}
+
+.md-content {
+  max-width: 76rem;
+}
+
+.md-typeset h1 {
+  color: var(--md-default-fg-color);
+  font-weight: 700;
+}
+
+.md-typeset h2 {
+  margin-top: 2.4rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  font-weight: 650;
+}
+
+.md-header__button.md-logo img,
 .md-header__button.md-logo svg {
-  height: 1.6rem;
+  height: 1.8rem;
   width: auto;
   display: block;
-}
-
-/* Let the sticky brand header collapse its tabs row while scrolling. */
-.md-tabs {
-  height: var(--yolovx-tabs-height, 3rem);
-  overflow: hidden;
-  transition: height 180ms ease, transform 180ms ease;
-}
-
-.md-tabs--hidden {
-  height: 0;
-  transform: translateY(calc(-1 * var(--yolovx-tabs-height, 3rem)));
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .md-tabs {
-    transition: none;
-  }
 }
 
 /* ==========================================
@@ -48,11 +137,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem;
   background-color: var(--md-card-bg-color, #1e222d);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 6px;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease;
   list-style: none !important;
   margin: 0 !important;
 }
@@ -61,22 +150,21 @@
 [data-md-color-scheme="default"] .grid.cards > ul > li,
 [data-md-color-scheme="default"] .grid.cards > li {
   background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid #dce4e6;
+  box-shadow: 0 1px 2px rgba(17, 23, 27, 0.04);
 }
 
 /* Hover Effect */
 .grid.cards > ul > li:hover,
 .grid.cards > li:hover {
-  transform: translateY(-3px);
-  border-color: #818cf8;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  border-color: #35bdb1;
+  box-shadow: 0 5px 16px rgba(0, 127, 120, 0.1);
 }
 
 [data-md-color-scheme="default"] .grid.cards > ul > li:hover,
 [data-md-color-scheme="default"] .grid.cards > li:hover {
-  border-color: #4f46e5;
-  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.12);
+  border-color: #35bdb1;
+  box-shadow: 0 5px 16px rgba(0, 127, 120, 0.1);
 }
 
 /* Card Header Text */
@@ -104,12 +192,12 @@
   gap: 0.4rem;
   font-weight: 600;
   font-size: 0.88rem;
-  color: #818cf8 !important;
+  color: #007f78 !important;
   text-decoration: none !important;
 }
 
 [data-md-color-scheme="default"] .grid.cards a {
-  color: #4f46e5 !important;
+  color: #007f78 !important;
 }
 
 .grid.cards a:hover {
@@ -119,5 +207,71 @@
 /* Hide horizontal rules inside cards if present */
 .grid.cards hr {
   display: none;
+}
+
+/* ==========================================
+   3. DOCUMENTATION HOME
+   ========================================== */
+
+.yolovx-home-intro {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem 0 2.5rem;
+  padding: 1.25rem 0 2rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.yolovx-home-logo {
+  display: block;
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+}
+
+.yolovx-home-copy h2 {
+  margin: 0.2rem 0 0.6rem;
+  padding: 0;
+  border: 0;
+  font-size: 1.8rem;
+}
+
+.yolovx-home-copy > p:not(.yolovx-home-eyebrow) {
+  max-width: 48rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.yolovx-home-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.yolovx-home-eyebrow {
+  margin: 0;
+  color: #008f86;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.grid.cards .twemoji {
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: -0.2em;
+}
+
+@media screen and (max-width: 600px) {
+  .yolovx-home-intro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.75rem 0 1.5rem;
+  }
+
+  .yolovx-home-logo {
+    width: 112px;
+  }
+
+  .yolovx-home-copy h2 {
+    font-size: 1.45rem;
+  }
 }
 

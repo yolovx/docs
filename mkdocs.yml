@@ -1,12 +1,9 @@
-site_name: Documentation
+site_name: YOLOvX Docs
 site_url: https://yolovx.com
 site_description: "YOLOvX — Vision AI SaaS for annotation, training & deployment"
 
 extra_css:
   - stylesheets/extra.css
-
-extra_javascript:
-  - javascripts/nav-scroll.js
 
 theme:
   name: material
@@ -23,22 +20,22 @@ theme:
   palette:
     # Light mode
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: blue
+      accent: cyan
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
     # Dark mode
     - scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: blue
+      accent: cyan
       toggle:
         icon: material/weather-night
         name: Switch to light mode
   features:
     # Navigation
-    - navigation.tabs
-    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
     - navigation.indexes
     - navigation.top
     - navigation.instant
@@ -116,7 +113,7 @@ markdown_extensions:
       title: On this page
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 # Footer Copyright Line
 copyright: |
@@ -125,24 +122,23 @@ copyright: |
 nav:
   - Home: index.md
 
-  - Models:
+  - Build & Train:
+    - Models:
       - Overview: models.md
       - Private Model Details: private_model_detail.md
       - Shared Model Details: shared_model_detail.md
+    - Datasets: datasets.md
+    - Training Pipeline: training.md
 
-  - Annotations:
-      - Overview: annotations.md
-      - Mobile Sync: mobile-sync.md
+  - Annotate & Organize:
+    - Annotation Workspace: annotations.md
+    - Projects & Jobs:
       - Project List: projectlist.md
-      - Job Batch: JobBatch.md
-      - Auto Annotation: Auto_annotation.md
+      - Job Batches: JobBatch.md
+    - Mobile Sync: mobile-sync.md
+    - Auto Annotation: Auto_annotation.md
 
-  - Datasets:
-      - Overview: datasets.md
-
-  - Training:
-      - Training Pipeline: training.md
-
-  - Account & Authentication:
-      - Quickstart & Auth: authentication.md
-      - Account Management: account_management.md
+  - Deploy & Manage:
+    - Deployment: deployment.md
+    - Quickstart & Auth: authentication.md
+    - Account Management: account_management.md

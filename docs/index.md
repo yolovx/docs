@@ -1,87 +1,93 @@
-# YOLOvX Documentation Hub
+# Platform Documentation
 
-Welcome to the official developer documentation for **YOLOvX** — the end-to-end Vision AI platform for model training, dataset annotation, and cloud deployments.
+<div class="yolovx-home-intro" markdown>
 
----
+![YOLOvX](images/yolovx_logo_e.webp){ .yolovx-home-logo alt="YOLOvX" }
 
-## Core Workspace Modules
+<div class="yolovx-home-copy" markdown>
+
+<p class="yolovx-home-eyebrow">PRODUCT DOCUMENTATION</p>
+
+## Vision AI, from data to deployment
+
+Guides for building datasets, annotating images, training models, and bringing computer vision workflows into production.
+
+[Get started](authentication.md){ .md-button .md-button--primary }
+[Explore training](training.md){ .md-button }
+
+</div>
+</div>
+
+## Explore the platform
+
+### Build & Train
 
 <div class="grid cards" markdown>
 
-* **Model Management**
+* **:material-cube-outline: Models**
 
-    Explore base architectures, private fine-tuned models, shared community models, and inference metrics.
+    Browse private and shared models, review model details, and manage model assets.
 
-    [View Models →](models.md)
+    [Explore models](models.md)
 
-* **Annotations Workspace**
+* **:material-school-outline: Training**
 
-    Label images using bounding boxes, polygons, SAM integration, mobile sync, and batch auto-annotation tools.
+    Prepare a dataset snapshot, configure fine-tuning, connect a GPU worker, and review results.
 
-    [Explore Annotations →](annotations.md)
+    [Open the training guide](training.md)
 
-* **Datasets & Versioning**
+* **:material-database-outline: Datasets**
 
-    Manage raw staging queues, configure custom train/val/test splits, and lock immutable snapshot versions.
+    Review staging data, configure splits, freeze versions, and export datasets.
 
-    [Manage Datasets →](datasets.md)
-
-* **Authentication & Onboarding**
-
-    Learn how to create accounts, verify organization emails, manage passcodes, and complete user profiles.
-
-    [Get Started →](authentication.md)
+    [Manage datasets](datasets.md)
 
 </div>
 
----
-
-## Model Training & Fine-Tuning
+### Annotate & Organize
 
 <div class="grid cards" markdown>
 
-* **Training Pipeline**
+* **:material-vector-square: Annotation Workspace**
 
-    Prepare a dataset snapshot, select a base model, configure a GPU worker, and monitor fine-tuning runs.
+    Learn the annotation canvas, project workflow, and review process.
 
-    [Configure Training](training.md#configure-a-training-run)
+    [Explore annotations](annotations.md)
 
-* **Evaluation & Model Registration**
+* **:material-view-grid-plus: Projects and Job Batches**
 
-    Review validation metrics, assess per-class performance, and register trained weights for supported workflows.
+    Organize projects, distribute batches, manage team assignments, and track progress.
 
-    [Evaluate and Register Models](training.md#evaluate-the-results)
+    [View project lists](projectlist.md) · [Manage job batches](JobBatch.md)
+
+* **:material-cellphone-link: Mobile Sync**
+
+    Pair the mobile app with a project and synchronize captured images for annotation.
+
+    [Set up mobile sync](mobile-sync.md)
 
 </div>
 
----
-
-## Advanced Capabilities
+### Deploy & Manage
 
 <div class="grid cards" markdown>
 
-* **Mobile Sync**
+* **:material-auto-fix: Auto Annotation**
 
-    Synchronize mobile annotation captures directly into active dataset pipelines.
+    Configure assisted labeling workflows and review generated annotations.
 
-    [Mobile Sync Details →](mobile-sync.md)
+    [Open auto annotation](Auto_annotation.md)
 
-* **Auto Annotation**
+* **:material-cloud-cog: Deployment**
 
-    Accelerate labeling throughput using automated ONNX and YOLO server-side pre-labelers.
+    Review deployment guidance and prepare YOLOvX workflows for your environment.
 
-    [Auto Annotation Guide →](Auto_annotation.md)
+    [Explore deployment](deployment.md)
 
-* **Job Batch Management**
+* **:material-account-cog: Accounts and Billing**
 
-    Organize dataset queue distribution across annotators, admins, and active team members.
+    Manage account access, workspace settings, API keys, and subscription options.
 
-    [Manage Job Batches →](JobBatch.md)
-
-* **Account & Billing**
-
-    Manage team workspace roles, API access keys, usage credits, and subscription plans.
-
-    [Account Settings →](account_management.md)
+    [Manage your account](account_management.md)
 
 </div>
