@@ -1,5 +1,5 @@
-site_name: YOLOvX Docs
-site_url: https://yolovx.com
+site_name: Documentation
+site_url: https://docs.yolovx.com
 site_description: "YOLOvX — Vision AI SaaS for annotation, training & deployment"
 
 extra_css:

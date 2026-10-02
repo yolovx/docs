@@ -12,8 +12,8 @@
 
 Guides for building datasets, annotating images, training models, and bringing computer vision workflows into production.
 
-[Get started](authentication.md){ .md-button .md-button--primary }
-[Explore training](training.md){ .md-button }
+[Open YOLOvX](https://web.yolovx.com){ .md-button .md-button--primary target="_blank" rel="noopener" }
+[Read the quickstart](authentication.md){ .md-button }
 
 </div>
 </div>
