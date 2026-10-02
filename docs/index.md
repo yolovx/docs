@@ -36,6 +36,26 @@ Welcome to the official developer documentation for **YOLOvX** — the end-to-en
 
 ---
 
+## Model Training & Fine-Tuning
+
+<div class="grid cards" markdown>
+
+* **Training Pipeline**
+
+    Prepare a dataset snapshot, select a base model, configure a GPU worker, and monitor fine-tuning runs.
+
+    [Configure Training](training.md#configure-a-training-run)
+
+* **Evaluation & Model Registration**
+
+    Review validation metrics, assess per-class performance, and register trained weights for supported workflows.
+
+    [Evaluate and Register Models](training.md#evaluate-the-results)
+
+</div>
+
+---
+
 ## Advanced Capabilities
 
 <div class="grid cards" markdown>

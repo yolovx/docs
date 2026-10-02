@@ -5,6 +5,9 @@ site_description: "YOLOvX — Vision AI SaaS for annotation, training & deployme
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/nav-scroll.js
+
 theme:
   name: material
   logo: ./images/yolovx_logo_e.webp
@@ -60,7 +63,6 @@ theme:
     - content.action.view
 
     # Header
-    - header.autohide
     - announce.dismiss
 
 repo_url: https://github.com/yolovx/docs

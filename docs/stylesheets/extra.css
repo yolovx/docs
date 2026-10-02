@@ -9,6 +9,25 @@
   display: block;
 }
 
+/* Let the sticky brand header collapse its tabs row while scrolling. */
+.md-tabs {
+  height: var(--yolovx-tabs-height, 3rem);
+  overflow: hidden;
+  transition: height 180ms ease, transform 180ms ease;
+}
+
+.md-tabs--hidden {
+  height: 0;
+  transform: translateY(calc(-1 * var(--yolovx-tabs-height, 3rem)));
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-tabs {
+    transition: none;
+  }
+}
+
 /* ==========================================
    2. ULTRALYTICS / SAAS STYLE GRID CARDS
    ========================================== */
